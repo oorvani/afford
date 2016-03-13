@@ -43,6 +43,8 @@
 
                     <div class="post-content">
                          <?php the_content() ?>
+                         <?php tablepress_print_table( array( 'id' => '6', 'use_datatables' => true, 'print_name' => false ) ); ?>
+                         <p><strong>Source:</strong><?php get_field('source') ?></p>
                          <?php wp_link_pages(array('before' => '<div class="post-nav-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
                     </div>
 
@@ -58,8 +60,6 @@
 
         
     </div><!-- inner-content-section ends -->
-    
-    <?php get_sidebar() ?>
     
 </div><!-- Content-section ends here -->
 
