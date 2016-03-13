@@ -10,7 +10,7 @@
 <?php if( have_posts() ) : while( have_posts() ): the_post() ?>
 
 <div id="content-section" class="content-section grid-col-16 clearfix">
-    <div id="post-<?php the_ID() ?>" <?php post_class('inner-content-section') ?>>
+    <div id="post-<?php the_ID() ?>"  class="data type-data status-publish format-standard">
 	
 	                <div class="post-title">
                     <?php if ( is_front_page() ): ?>
