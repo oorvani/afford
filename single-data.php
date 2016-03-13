@@ -43,8 +43,11 @@
 
                     <div class="post-content">
                          <?php the_content() ?>
-                         <?php tablepress_print_table( array( 'id' => '6', 'use_datatables' => true, 'print_name' => false ) ); ?>
+                         <?php tablepress_print_table( array( 'id' => '<?php get_field("tablepress") ?>', 'use_datatables' => true, 'print_name' => false, 'datatables_buttons' => 'colvis,copy,csv,excel,pdf,print') ); ?>
                          <p><strong>Source:</strong><?php get_field('source') ?></p>
+                         <p><strong>Credit:</strong><?php get_field('credit') ?></p>
+                         <p><strong>License:</strong><?php get_field('license') ?></p>
+                         <p><strong>Notes:</strong><?php get_field('notes') ?></p>
                          <?php wp_link_pages(array('before' => '<div class="post-nav-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
                     </div>
 
