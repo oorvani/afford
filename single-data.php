@@ -43,7 +43,18 @@
 
                     <div class="post-content">
                          <?php the_content() ?>
-                         <?php tablepress_print_table( array( 'id' => '<?php get_field("tablepress") ?>', 'use_datatables' => true, 'print_name' => false, 'datatables_buttons' => 'colvis,copy,csv,excel,pdf,print') ); ?>
+                         <?php
+                            $post_obj = get_field( 'tablepress' );
+                            // get the post-table pair json data
+                            $table_json = get_option( 'tablepress_tables' );
+                            // json decode to array
+                            $json_dec = json_decode( $table_json, true );
+                            // get the pair data
+                            $post_table = $json_dec['table_post'];
+                            // flip the key/value of the array
+                            $flip = array_flip( $post_table );
+                         ?>
+                         <?php tablepress_print_table( array( 'id' => $flip[$post_obj->ID], 'use_datatables' => true, 'print_name' => false, 'datatables_buttons' => 'colvis,copy,csv,excel,pdf,print') ); ?>
                          <p><strong>Source:</strong><?php get_field('source') ?></p>
                          <p><strong>Credit:</strong><?php get_field('credit') ?></p>
                          <p><strong>License:</strong><?php get_field('license') ?></p>
