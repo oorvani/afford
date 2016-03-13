@@ -55,10 +55,10 @@
                             $flip = array_flip( $post_table );
                          ?>
                          <?php tablepress_print_table( array( 'id' => $flip[$post_obj->ID], 'use_datatables' => true, 'print_name' => false, 'datatables_buttons' => 'colvis,copy,csv,excel,pdf,print') ); ?>
-                         <p><strong>Source:</strong><?php get_field('source') ?></p>
-                         <p><strong>Credit:</strong><?php get_field('credit') ?></p>
-                         <p><strong>License:</strong><?php get_field('license') ?></p>
-                         <p><strong>Notes:</strong><?php get_field('notes') ?></p>
+                         <p><strong>Source:</strong><?php echo get_field('source'); ?></p>
+                         <p><strong>Credit:</strong><?php echo get_field('credit'); ?></p>
+                         <p><strong>License:</strong><?php echo get_field('license'); ?></p>
+                         <p><strong>Notes:</strong><?php echo get_field('notes'); ?></p>
                          <?php wp_link_pages(array('before' => '<div class="post-nav-link"><span>' . __('Pages:', 'afford') . '</span>', 'after' => '</div>')) ?>
                     </div>
 
