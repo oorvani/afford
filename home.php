@@ -20,6 +20,9 @@
 <?php endif; ?>
 
 <div id="content-section" class="content-section blog-page grid-col-16">
+    <div id="datatable-master-table">
+      <?php tablepress_print_table( array( 'id' => '25', 'use_datatables' => true, 'print_name' => false) ); ?>
+    </div>
     <div class="inner-content-section grid-pct-65">
         
             <?php if( have_posts() ) : ?>
