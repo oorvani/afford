@@ -8,7 +8,7 @@
 <?php get_header() ?>
 
 <div id="content-section" class="content-section grid-col-16">
-    <?php if (!is_front_page()): ?>
+    <?php if (is_front_page()): ?>
       <div id="datatable-master-table">
         <?php tablepress_print_table( array( 'id' => '25', 'use_datatables' => true, 'print_name' => false) ); ?>
       </div>
